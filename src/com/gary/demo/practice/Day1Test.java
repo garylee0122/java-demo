@@ -1,3 +1,5 @@
+package com.gary.demo.practice;
+
 import java.util.Scanner;
 
 public class Day1Test {

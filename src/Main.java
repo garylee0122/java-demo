@@ -1,3 +1,6 @@
+import com.gary.demo.practice.Day1Test;
+import com.gary.demo.practice.Day2Test;
+
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -8,28 +11,34 @@ public class Main {
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.println("Hello and welcome!");
         Scanner input = new Scanner(System.in);
-        System.out.print("Please enter the question number : ");
-        int num = input.nextInt();
+        System.out.print("Please enter the Day number : ");
+        int dateNum = input.nextInt();
 
-        switch (num) {
+        switch (dateNum) {
             case 1:
-                Day1Test.practice1();
+                System.out.print("Please enter the Day1 practice number : ");
+                int day1Num = input.nextInt();
+                try {
+                    java.lang.reflect.Method m = Day1Test.class.getMethod("practice" + day1Num);
+                    m.invoke(null); // static method -> null instance
+                } catch (NoSuchMethodException e) {
+                    System.out.println("No practice method for number " + day1Num);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 break;
 
             case 2:
-                Day1Test.practice2();
-                break;
-
-            case 3:
-                Day1Test.practice3();
-                break;
-
-            case 4:
-                Day1Test.practice4();
-                break;
-
-            case 5:
-                Day1Test.practice5();
+                System.out.print("Please enter the Day2 practice number : ");
+                int day2Num = input.nextInt();
+                try {
+                    java.lang.reflect.Method m = Day2Test.class.getMethod("practice" + day2Num);
+                    m.invoke(null); // static method -> null instance
+                } catch (NoSuchMethodException e) {
+                    System.out.println("No practice method for number " + day2Num);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 break;
 
             default:

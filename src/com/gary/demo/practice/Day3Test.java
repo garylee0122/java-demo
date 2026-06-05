@@ -263,5 +263,9 @@ public class Day3Test {
                 .forEach(
                         User::displayInfo
                 );
+
+        users.stream()
+                .filter(User::isAdmin)
+                .forEach(User::displayInfo);
     }
 }

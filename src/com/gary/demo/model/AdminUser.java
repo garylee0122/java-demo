@@ -47,4 +47,9 @@ public class AdminUser extends User {
                         ", Role : " + role
         );
     }
+
+    @Override
+    public boolean isAdmin() {
+        return "admin".equals(role);
+    }
 }

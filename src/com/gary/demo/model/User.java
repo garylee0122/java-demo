@@ -71,4 +71,12 @@ public class User {
                 ", email='" + email + '\'' +
                 '}';
     }
+
+    /**
+     * 是否為管理員
+     * 預設不是
+     */
+    public boolean isAdmin() {
+        return false;
+    }
 }

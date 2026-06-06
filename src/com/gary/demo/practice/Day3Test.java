@@ -2,6 +2,7 @@ package com.gary.demo.practice;
 
 import com.gary.demo.model.AdminUser;
 import com.gary.demo.model.User;
+import com.gary.demo.model.UserRole;
 
 import java.util.*;
 import java.util.stream.IntStream;
@@ -205,7 +206,7 @@ public class Day3Test {
                         "U2",
                         "USERB",
                         "userb@test.com",
-                        "admin"
+                        UserRole.ADMIN
                 )
         );
 
@@ -222,7 +223,7 @@ public class Day3Test {
                         "U4",
                         "USERD",
                         "userd@test.com",
-                        "admin"
+                        UserRole.ADMIN
                 )
         );
 
@@ -231,7 +232,7 @@ public class Day3Test {
                         "U5",
                         "USERE",
                         "usere@test.com",
-                        "employee"
+                        UserRole.EMPLOYEE
                 )
         );
 

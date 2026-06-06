@@ -2,7 +2,12 @@ package com.gary.demo.model;
 
 public class AdminUser extends User {
 
-    private String role;
+    /**
+     * 使用 Enum
+     *
+     * 不再使用 String
+     */
+    private UserRole role;
 
     public AdminUser() {
     }
@@ -11,45 +16,40 @@ public class AdminUser extends User {
             String account,
             String name,
             String email,
-            String role
+            UserRole role
     ) {
 
-        /**
-         * super 必須放在 Constructor 第一行
-         *
-         * 因為父類別必須先初始化完成
-         */
-        super(account, name, email);
+        super(
+                account,
+                name,
+                email
+        );
 
         this.role = role;
     }
 
-    public String getRole() {
+    public UserRole getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(
+            UserRole role
+    ) {
         this.role = role;
     }
 
-    /**
-     * Override 父類別方法
-     *
-     * 這就是 Polymorphism（多型）
-     */
     @Override
     public void displayInfo() {
 
         System.out.println(
-                "Account : " + getAccount() +
-                        ", Name : " + getName() +
-                        ", Email : " + getEmail() +
-                        ", Role : " + role
+                "Account : "
+                        + getAccount()
+                        + ", Name : "
+                        + getName()
+                        + ", Email : "
+                        + getEmail()
+                        + ", Role : "
+                        + role
         );
-    }
-
-    @Override
-    public boolean isAdmin() {
-        return "admin".equals(role);
     }
 }

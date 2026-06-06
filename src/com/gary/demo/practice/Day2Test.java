@@ -5,6 +5,7 @@ import com.gary.demo.model.AdminUser;
 import com.gary.demo.model.User;
 import com.gary.demo.service.LoginService;
 import com.gary.demo.service.LoginServiceImpl;
+import com.gary.demo.model.UserRole;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,14 +73,14 @@ public class Day2Test {
         adminA.setAccount("adminA");
         adminA.setName("admin-A");
         adminA.setEmail("admin-a@mail.com");
-        adminA.setRole("admin");
+        adminA.setRole(UserRole.ADMIN);
 
         AdminUser adminB =
                 new AdminUser(
                         "adminB",
                         "admin-B",
                         "admin-b@mail.com",
-                        "admin"
+                        UserRole.ADMIN
                 );
 
         List<AdminUser> admins =
@@ -141,7 +142,7 @@ public class Day2Test {
                         "adminC",
                         "admin-C",
                         "admin-c@mail.com",
-                        "admin"
+                        UserRole.ADMIN
                 );
 
         User userD =
@@ -149,7 +150,7 @@ public class Day2Test {
                         "userD",
                         "user-D",
                         "user-d@mail.com",
-                        "user"
+                        UserRole.USER
                 );
 
         List<User> users =
